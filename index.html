@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X 展示页面</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <!-- 主容器 -->
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" class="logo-icon">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </div>
+                
+                <!-- 导航菜单 -->
+                <div class="nav-menu">
+                    <a href="#" class="nav-item active">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M12 1.696L6 6.696V19h3v-6h6v6h3V6.696l-6-5z"/>
+                        </svg>
+                        <span class="nav-text">主页</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" id="theme-toggle">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5z"/>
+                        </svg>
+                        <span class="nav-text">探索</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M19.993 9.042C19.48 5.017 16.054 2 11.996 2s-7.49 3.021-7.999 7.051L2.866 18H7.1c.463 2.282 2.481 4 4.9 4s4.437-1.718 4.9-4h4.234l-1.141-8.958zM12 20c-1.306 0-2.417-.835-2.829-2h5.658c-.412 1.165-1.523 2-2.829 2z"/>
+                        </svg>
+                        <span class="nav-text">通知</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01z"/>
+                        </svg>
+                        <span class="nav-text">私信</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M7.501 19.917L7.471 21H.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977.963 0 1.95.212 2.87.672-.444.478-.851 1.03-1.212 1.656-.507-.204-1.054-.329-1.658-.329-2.767 0-4.57 2.223-4.938 6.004zm15.027.583L22.5 21h-7.009l.027-.416c.19-6.867 3.81-9.084 7.012-9.084 3.079 0 6.904 2.323 7.001 9.084z"/>
+                        </svg>
+                        <span class="nav-text">社群</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <svg viewBox="0 0 24 24" class="nav-icon">
+                            <path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v15c0 1.38-1.119 2.5-2.5 2.5h-11C5.119 22 4 20.88 4 19.5v-15zM6.5 4c-.276 0-.5.22-.5.5v15c0 .28.224.5.5.5h11c.276 0 .5-.22.5-.5v-15c0-.28-.224-.5-.5-.5h-11z"/>
+                        </svg>
+                        <span class="nav-text">书签</span>
+                    </a>
+                </div>
+                
+                <!-- 发帖按钮 -->
+                <button class="post-button" id="post-button">发帖</button>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 顶部标签 -->
+            <div class="top-tabs">
+                <div class="tab active">为你推荐</div>
+                <div class="tab">关注</div>
+            </div>
+            
+            <!-- 推文列表 -->
+            <div class="tweets-container" id="tweets-container">
+                <!-- 推文将通过 JavaScript 动态加载 -->
+            </div>
+        </main>
+        
+        <!-- 右侧边栏 -->
+        <aside class="right-sidebar">
+            <div class="search-box">
+                <svg viewBox="0 0 24 24" class="search-icon">
+                    <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zM1.75 10.25c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z"/>
+                </svg>
+                <input type="text" placeholder="搜索">
+            </div>
+            
+            <div class="widget">
+                <h3>订阅 Premium</h3>
+                <p>订阅以解锁新功能，如果符合条件，还可获得收入分成。</p>
+                <button class="subscribe-button">订阅</button>
+            </div>
+            
+            <div class="widget">
+                <h3>有什么新鲜事</h3>
+                <div class="trending-item">
+                    <span class="trending-category">美国 趋势榜</span>
+                    <span class="trending-topic">Diggs</span>
+                    <span class="trending-posts">8,688 条帖子</span>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-category">娱乐 趋势榜</span>
+                    <span class="trending-topic">hunter schafer</span>
+                    <span class="trending-posts">9,968 条帖子</span>
+                </div>
+                <button class="show-more">显示更多</button>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- 移动端底部导航 -->
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 1.696L6 6.696V19h3v-6h6v6h3V6.696l-6-5z"/>
+            </svg>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobile-theme-toggle">
+            <svg viewBox="0 0 24 24">
+                <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5z"/>
+            </svg>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M19.993 9.042C19.48 5.017 16.054 2 11.996 2s-7.49 3.021-7.999 7.051L2.866 18H7.1c.463 2.282 2.481 4 4.9 4s4.437-1.718 4.9-4h4.234l-1.141-8.958zM12 20c-1.306 0-2.417-.835-2.829-2h5.658c-.412 1.165-1.523 2-2.829 2z"/>
+            </svg>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v13c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-13c0-.276-.224-.5-.5-.5h-15z"/>
+            </svg>
+        </a>
+    </nav>
+    
+    <!-- 管理弹窗 -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>管理推文</h2>
+                <button class="close-button" id="close-modal">×</button>
+            </div>
+            <div class="modal-content">
+                <div class="add-tweet-form">
+                    <h3>添加新推文</h3>
+                    <div class="random-text-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="random-text-switch">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">随机文字模式（只需上传图片，自动配置文案）</span>
+                    </div>
+                    <textarea id="tweet-content" placeholder="推文内容"></textarea>
+                    <div class="media-upload" id="media-upload">
+                        <div class="upload-area">
+                            <p>拖拽图片/视频到这里或点击上传</p>
+                            <input type="file" id="file-input" accept="image/*,video/*" multiple>
+                        </div>
+                        <div class="media-preview" id="media-preview"></div>
+                    </div>
+                    <button class="add-tweet-button" id="add-tweet">添加推文</button>
+                </div>
+                
+                <div class="tweets-list">
+                    <h3>现有推文</h3>
+                    <div class="sortable-tweets" id="sortable-tweets">
+                        <!-- 推文列表将通过 JavaScript 动态加载 -->
+                    </div>
+                </div>
+                
+                <div class="global-settings">
+                    <h3>全局设置</h3>
+                    <div class="settings-form">
+                        <input type="text" id="global-author" placeholder="用户名" value="Gate交易所">
+                        <input type="text" id="global-handle" placeholder="@用户名" value="@gate_io">
+                        <div class="avatar-upload">
+                            <label for="avatar-input">头像:</label>
+                            <input type="file" id="avatar-input" accept="image/*">
+                            <div class="avatar-preview" id="avatar-preview">
+                                <div class="default-avatar">G</div>
+                            </div>
+                        </div>
+                        <button class="save-settings-button" id="save-settings">保存全局设置</button>
+                    </div>
+                </div>
+                
+                <div class="data-management">
+                    <h3>项目导出</h3>
+                    <div class="data-buttons">
+                        <button class="export-button" id="export-data">导出完整项目</button>
+                    </div>
+                    <p class="data-info">导出包含所有文件的完整项目 ZIP 包。解压后可直接打开 index.html 使用，无需额外配置。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 图片/视频预览弹窗 -->
+    <div class="media-overlay" id="media-overlay">
+        <div class="media-container">
+            <img id="preview-image" style="display: none;">
+            <video id="preview-video" controls style="display: none;"></video>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="preset-texts.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
