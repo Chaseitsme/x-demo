@@ -538,8 +538,8 @@ function initializeGlobalSettings() {
 // 处理保存设置
 function handleSaveSettings() {
     const newSettings = {
-        author: globalAuthor.value.trim() || 'Gate交易所',
-        handle: globalHandle.value.trim() || '@gate_io'
+        author: globalAuthor.value.trim() || 'Gate Desgin',
+        handle: globalHandle.value.trim() || '@Gate'
     };
     
     if (!newSettings.handle.startsWith('@')) {
