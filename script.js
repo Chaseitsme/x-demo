@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTweets();
     renderSortableTweets();
     setupEventListeners();
+    loadProfileHeader();
 });
 
 // 设置事件监听器
@@ -89,6 +90,39 @@ function setupEventListeners() {
     
     // 随机文字开关
     randomTextSwitch.addEventListener('change', handleRandomTextToggle);
+    
+    // 批量上传
+    const batchDropZone = document.getElementById('batch-drop-zone');
+    const batchSelectBtn = document.getElementById('batch-select-btn');
+    const batchFileInput = document.getElementById('batch-file-input');
+    
+    if (batchDropZone && batchSelectBtn && batchFileInput) {
+        batchSelectBtn.addEventListener('click', function() {
+            batchFileInput.click();
+        });
+        
+        batchFileInput.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            handleBatchUpload(files);
+        });
+        
+        batchDropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            batchDropZone.classList.add('dragover');
+        });
+        
+        batchDropZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            batchDropZone.classList.remove('dragover');
+        });
+        
+        batchDropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            batchDropZone.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files);
+            handleBatchUpload(files);
+        });
+    }
 }
 
 // 主题切换
@@ -125,12 +159,11 @@ function createTweetElement(tweet) {
     tweetDiv.dataset.id = tweet.id;
     
     const settings = getGlobalSettings();
-    const avatarText = tweet.author.charAt(0).toUpperCase();
+    const avatarText = settings.author.charAt(0).toUpperCase();
     let avatarHtml = '';
     
-    if (tweet.avatar || settings.avatar) {
-        const avatarSrc = tweet.avatar || settings.avatar;
-        avatarHtml = `<img src="${avatarSrc}" alt="头像" style="width: 100%; height: 100%; object-fit: cover;">`;
+    if (settings.avatar) {
+        avatarHtml = `<img src="${settings.avatar}" alt="头像" style="width: 100%; height: 100%; object-fit: cover;">`;
     } else {
         avatarHtml = avatarText;
     }
@@ -149,7 +182,7 @@ function createTweetElement(tweet) {
         } else if (media.type === 'video') {
             mediaHtml = `
                 <div class="${mediaClass}">
-                    <video src="${media.url}" onclick="openMediaPreview('${media.url}', 'video')"></video>
+                    <video src="${media.url}" autoplay muted loop playsinline onclick="openMediaPreview('${media.url}', 'video')"></video>
                 </div>
             `;
         }
@@ -158,8 +191,8 @@ function createTweetElement(tweet) {
     tweetDiv.innerHTML = `
         <div class="tweet-header">
             <div class="tweet-avatar">${avatarHtml}</div>
-            <div class="tweet-author">${tweet.author}</div>
-            <div class="tweet-handle">${tweet.handle}</div>
+            <div class="tweet-author">${settings.author}</div>
+            <div class="tweet-handle">${settings.handle}</div>
             <div class="tweet-time">·${tweet.time}</div>
         </div>
         <div class="tweet-content">${tweet.content}</div>
@@ -254,6 +287,8 @@ function openMediaPreview(url, type) {
         previewVideo.src = url;
         previewVideo.style.display = 'block';
         previewImage.style.display = 'none';
+        // 确保视频能够播放
+        previewVideo.play().catch(e => console.log('视频播放失败:', e));
     }
     
     mediaOverlay.style.display = 'flex';
@@ -375,8 +410,7 @@ function handleAddTweet() {
         author: settings.author,
         handle: settings.handle,
         content,
-        media: uploadedFiles.length > 0 ? uploadedFiles : null,
-        avatar: settings.avatar
+        media: uploadedFiles.length > 0 ? uploadedFiles : null
     };
     
     addTweet(newTweet);
@@ -452,6 +486,8 @@ function createSortableTweetElement(tweet) {
     tweetDiv.className = 'sortable-tweet';
     tweetDiv.dataset.id = tweet.id;
     
+    const settings = getGlobalSettings();
+    
     let mediaHtml = '';
     if (tweet.media && tweet.media.length > 0) {
         mediaHtml = '<div class="sortable-tweet-media">';
@@ -467,7 +503,7 @@ function createSortableTweetElement(tweet) {
     
     tweetDiv.innerHTML = `
         <div class="sortable-tweet-header">
-            <div class="sortable-tweet-author">${tweet.author} ${tweet.handle}</div>
+            <div class="sortable-tweet-author">${settings.author} ${settings.handle}</div>
             <button class="delete-tweet" onclick="handleDeleteTweet(${tweet.id})">删除</button>
         </div>
         <div class="sortable-tweet-content">${tweet.content}</div>
@@ -538,7 +574,7 @@ function initializeGlobalSettings() {
 // 处理保存设置
 function handleSaveSettings() {
     const newSettings = {
-        author: globalAuthor.value.trim() || 'Gate Desgin',
+        author: globalAuthor.value.trim() || 'Gate Design',
         handle: globalHandle.value.trim() || '@Gate'
     };
     
@@ -568,6 +604,10 @@ function handleAvatarUpload(e) {
         reader.onload = function(e) {
             updateGlobalSettings({ avatar: e.target.result });
             avatarPreview.innerHTML = `<img src="${e.target.result}" alt="头像">`;
+            // 更新推文页顶部的头像
+            loadProfileHeader();
+            // 重新渲染推文列表以更新推文中的头像
+            renderTweets();
         };
         reader.readAsDataURL(file);
     }
@@ -597,13 +637,8 @@ async function handleExportData() {
     for (const tweet of tweets) {
         const processedTweet = { ...tweet };
         
-        // 处理推文头像
-        if (tweet.avatar && tweet.avatar.startsWith('data:')) {
-            const avatarFileName = `avatar-${tweet.id}.png`;
-            const avatarData = tweet.avatar.split(',')[1];
-            assetsFolder.file(avatarFileName, avatarData, {base64: true});
-            processedTweet.avatar = `assets/${avatarFileName}`;
-        }
+        // 移除推文中的头像信息（现在只使用全局头像）
+        delete processedTweet.avatar;
         
         // 处理媒体文件
         if (tweet.media && tweet.media.length > 0) {
@@ -700,65 +735,74 @@ function updateGlobalSettings(settings) {
     globalSettings = { ...globalSettings, ...settings };
 }`;
     
-    // 读取当前的 HTML、CSS、JS 文件并添加到 ZIP
+    // 添加文件到 ZIP
     try {
         // 添加 data.js
         zip.file("data.js", dataJsContent);
         
-        // 添加其他项目文件
-        const htmlResponse = await fetch('index.html');
-        const htmlContent = await htmlResponse.text();
-        zip.file("index.html", htmlContent);
-        
-        const cssResponse = await fetch('styles.css');
-        const cssContent = await cssResponse.text();
-        zip.file("styles.css", cssContent);
-        
-        const jsResponse = await fetch('script.js');
-        const jsContent = await jsResponse.text();
-        zip.file("script.js", jsContent);
-        
-        // 添加预置文案文件
-        const presetTextsResponse = await fetch('preset-texts.js');
-        const presetTextsContent = await presetTextsResponse.text();
-        zip.file("preset-texts.js", presetTextsContent);
-        
-        // 添加 README 文件
-        const readmeContent = `# X 推文展示页面
+        // 添加使用说明而不是尝试读取原始文件
+        const instructionsContent = `# 导出说明
 
-这是一个静态的推文展示页面项目。
+由于浏览器安全限制，无法自动包含所有项目文件。
 
-## 使用方法
+请手动复制以下文件到解压后的文件夹中：
+- index.html
+- styles.css  
+- script.js
+- preset-texts.js
 
-1. 直接打开 index.html 文件即可查看推文
-2. 点击"发帖"按钮可以管理推文内容
-3. 媒体文件存储在 assets 文件夹中
+然后将 data.js 替换为导出的版本即可。
 
-## 文件结构
-
-- index.html - 主页面
-- script.js - JavaScript 逻辑
-- styles.css - 样式文件
-- data.js - 推文数据
-- assets/ - 媒体文件文件夹
-
-导出时间: ${new Date().toLocaleString('zh-CN')}
+媒体文件已自动包含在 assets 文件夹中。
 `;
-        zip.file("README.md", readmeContent);
+        zip.file("导出说明.txt", instructionsContent);
         
         // 生成并下载 ZIP 文件
         const content = await zip.generateAsync({type: "blob"});
         const link = document.createElement('a');
         link.href = URL.createObjectURL(content);
-        link.download = `x-tweets-project-${new Date().toISOString().split('T')[0]}.zip`;
+        link.download = `x-tweets-data-${new Date().toISOString().split('T')[0]}.zip`;
         link.click();
         
         // 显示成功提示
         showExportNotification();
         
     } catch (error) {
-        alert('导出失败：' + error.message);
         console.error('Export error:', error);
+        // 显示更友好的错误提示
+        const errorNotification = document.createElement('div');
+        errorNotification.className = 'batch-notification error';
+        errorNotification.textContent = '导出失败，请检查浏览器设置或重试';
+        errorNotification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ef4444;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 10000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        `;
+        
+        document.body.appendChild(errorNotification);
+        
+        setTimeout(() => {
+            errorNotification.style.transform = 'translateX(0)';
+        }, 10);
+        
+        setTimeout(() => {
+            errorNotification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (errorNotification.parentNode) {
+                    document.body.removeChild(errorNotification);
+                }
+            }, 300);
+        }, 3000);
     }
 }
 
@@ -789,6 +833,215 @@ function showExportNotification() {
 }
 
 
+
+// 加载个人资料页面头像
+function loadProfileHeader() {
+    const settings = getGlobalSettings();
+    const profileAvatar = document.getElementById('profile-avatar');
+    const profileName = document.getElementById('profile-name');
+    const profileHandle = document.getElementById('profile-handle');
+    
+    if (profileAvatar) {
+        if (settings.avatar) {
+            profileAvatar.innerHTML = `<img src="${settings.avatar}" alt="头像" style="width: 100%; height: 100%; object-fit: cover;">`;
+        } else {
+            const avatarText = settings.author.charAt(0).toUpperCase();
+            profileAvatar.innerHTML = avatarText;
+        }
+    }
+    
+    if (profileName) {
+        profileName.textContent = settings.author;
+    }
+    
+    if (profileHandle) {
+        profileHandle.textContent = settings.handle;
+    }
+}
+
+// 批量上传处理函数
+async function handleBatchUpload(files) {
+    console.log('开始批量上传，文件数量:', files.length);
+    
+    if (!files || files.length === 0) {
+        console.log('没有文件');
+        return;
+    }
+    
+    // 过滤支持的文件类型
+    const supportedFiles = files.filter(file => {
+        const type = file.type;
+        const isSupported = type.startsWith('image/') || type === 'video/mp4';
+        console.log(`文件 ${file.name}, 类型: ${type}, 支持: ${isSupported}`);
+        return isSupported;
+    });
+    
+    console.log('支持的文件数量:', supportedFiles.length);
+    
+    if (supportedFiles.length === 0) {
+        showNotification('没有找到支持的文件格式（支持图片和MP4视频）', 'error');
+        return;
+    }
+    
+    // 显示进度条
+    const progressContainer = document.getElementById('batch-progress');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    
+    if (!progressContainer || !progressFill || !progressText) {
+        console.error('找不到进度条元素');
+        showNotification('界面元素加载失败', 'error');
+        return;
+    }
+    
+    progressContainer.style.display = 'block';
+    progressText.textContent = `正在处理 ${supportedFiles.length} 个文件...`;
+    
+    let processedCount = 0;
+    const totalFiles = supportedFiles.length;
+    
+    // 逐个处理文件
+    for (let i = 0; i < supportedFiles.length; i++) {
+        const file = supportedFiles[i];
+        console.log(`处理第 ${i + 1} 个文件:`, file.name);
+        
+        try {
+            // 更新进度
+            progressText.textContent = `正在处理第 ${i + 1} 个文件: ${file.name}`;
+            
+            // 获取随机文案
+            let randomText = '分享一张图片'; // 默认文案
+            try {
+                if (typeof getRandomPresetText === 'function') {
+                    randomText = getRandomPresetText();
+                    console.log('获取到随机文案:', randomText.substring(0, 50) + '...');
+                } else {
+                    console.warn('getRandomPresetText 函数不存在');
+                }
+            } catch (e) {
+                console.warn('获取随机文案失败，使用默认文案:', e);
+            }
+            
+            // 将文件转换为base64
+            const base64Data = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+            
+            console.log('文件转换为base64成功:', file.name);
+            
+            // 创建推文数据
+            const tweet = {
+                content: randomText,
+                media: [{
+                    type: file.type.startsWith('image/') ? 'image' : 'video',
+                    url: base64Data, // 使用base64数据而不是文件路径
+                    name: file.name
+                }]
+            };
+            
+            console.log('创建推文数据:', tweet);
+            
+            // 使用现有的addTweet函数添加推文
+            if (typeof addTweet === 'function') {
+                const newTweet = addTweet(tweet);
+                console.log('成功添加推文:', newTweet.id);
+                processedCount++;
+            } else {
+                console.error('addTweet 函数不存在');
+            }
+            
+            // 更新进度条
+            const progress = (processedCount / totalFiles) * 100;
+            progressFill.style.width = `${progress}%`;
+            
+            // 添加小延迟，让用户看到进度
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+        } catch (error) {
+            console.error('处理文件时出错:', file.name, error);
+            // 即使出错也要增加计数，避免卡住
+            processedCount++;
+        }
+    }
+    
+    console.log(`批量处理完成，成功处理 ${processedCount} 个文件`);
+    
+    // 完成处理
+    progressText.textContent = `成功处理 ${processedCount} 个文件！`;
+    
+    // 重新渲染推文列表
+    try {
+        if (typeof renderTweets === 'function') {
+            renderTweets();
+            console.log('重新渲染推文列表');
+        }
+        if (typeof renderSortableTweets === 'function') {
+            renderSortableTweets();
+            console.log('重新渲染可排序推文列表');
+        }
+    } catch (error) {
+        console.error('重新渲染时出错:', error);
+    }
+    
+    // 隐藏进度条
+    setTimeout(() => {
+        progressContainer.style.display = 'none';
+        progressFill.style.width = '0%';
+    }, 2000);
+    
+    // 显示成功通知
+    showNotification(`成功批量添加 ${processedCount} 条推文！`, 'success');
+    
+    // 清空批量文件输入
+    const batchFileInput = document.getElementById('batch-file-input');
+    if (batchFileInput) {
+        batchFileInput.value = '';
+    }
+}
+
+// 显示通知函数
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `batch-notification ${type}`;
+    notification.textContent = message;
+    
+    // 添加样式
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: ${type === 'success' ? '#10b981' : '#ef4444'};
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // 显示动画
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+    
+    // 自动隐藏
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
 
 // 页面加载完成后加载 Sortable.js
 window.addEventListener('load', loadSortableJS);
