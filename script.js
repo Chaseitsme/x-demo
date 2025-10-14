@@ -684,10 +684,10 @@ function addTweet(tweet) {
         ...tweet,
         time: "刚刚",
         stats: {
-            comments: 0,
-            retweets: 0,
-            likes: 0,
-            views: Math.floor(Math.random() * 1000)
+            comments: Math.floor(Math.random() * 15), // 0-14条评论
+            retweets: Math.floor(Math.random() * 25), // 0-24次转发
+            likes: Math.floor(Math.random() * 100) + 10, // 10-109个赞
+            views: Math.floor(Math.random() * 2000) + 500 // 500-2499次浏览
         }
     };
     tweetsData.unshift(newTweet);
@@ -708,16 +708,26 @@ function updateTweetOrder(newOrder) {
 function updateTweetStats(id, type) {
     const tweet = tweetsData.find(t => t.id === id);
     if (tweet) {
-        const randomIncrease = Math.floor(Math.random() * 10) + 1;
         switch (type) {
             case 'like':
-                tweet.stats.likes += Math.floor(Math.random() * 20) + 5;
+                // 点赞增长：8-35个，模拟真实的点赞爆发
+                tweet.stats.likes += Math.floor(Math.random() * 28) + 8;
+                // 点赞也会带来一些浏览量
+                tweet.stats.views += Math.floor(Math.random() * 50) + 20;
                 break;
             case 'retweet':
-                tweet.stats.retweets += randomIncrease;
+                // 转发增长：3-15个，转发相对较少但影响大
+                tweet.stats.retweets += Math.floor(Math.random() * 13) + 3;
+                // 转发会带来更多浏览量和一些点赞
+                tweet.stats.views += Math.floor(Math.random() * 100) + 50;
+                tweet.stats.likes += Math.floor(Math.random() * 15) + 5;
                 break;
             case 'comment':
-                tweet.stats.comments += randomIncrease;
+                // 评论增长：1-8个，评论最少但最有价值
+                tweet.stats.comments += Math.floor(Math.random() * 8) + 1;
+                // 评论会带来浏览量和一些点赞
+                tweet.stats.views += Math.floor(Math.random() * 30) + 15;
+                tweet.stats.likes += Math.floor(Math.random() * 10) + 2;
                 break;
         }
         return tweet.stats;
