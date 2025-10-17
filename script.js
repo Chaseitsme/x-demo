@@ -39,8 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // 设置事件监听器
 function setupEventListeners() {
     // 主题切换
-    themeToggle.addEventListener('click', toggleTheme);
-    mobileThemeToggle.addEventListener('click', toggleTheme);
+    themeToggle.addEventListener('click', function(e) { e.preventDefault(); toggleTheme(); });
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', function(e) { e.preventDefault(); toggleTheme(); });
+    }
     
     // 弹窗控制
     postButton.addEventListener('click', openModal);
