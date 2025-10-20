@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderSortableTweets();
     setupEventListeners();
     loadProfileHeader();
+    initBackgroundSwitcher();
 });
 
 // 设置事件监听器
@@ -576,7 +577,7 @@ function initializeGlobalSettings() {
 // 处理保存设置
 function handleSaveSettings() {
     const newSettings = {
-        author: globalAuthor.value.trim() || 'Gate Design',
+        author: globalAuthor.value.trim() || 'Gate',
         handle: globalHandle.value.trim() || '@Gate'
     };
     
@@ -1057,3 +1058,34 @@ function showNotification(message, type = 'success') {
 
 // 页面加载完成后加载 Sortable.js
 window.addEventListener('load', loadSortableJS);
+
+// 背景图切换功能
+let currentBgIndex = 1; // 当前背景图索引，从1开始
+const totalBgImages = 4; // 总共4张背景图
+
+// 初始化背景图切换功能
+function initBackgroundSwitcher() {
+    const profileBg = document.getElementById('profile-bg');
+    if (profileBg) {
+        profileBg.style.cursor = 'pointer';
+        profileBg.addEventListener('click', switchBackground);
+    }
+}
+
+// 切换背景图函数
+function switchBackground() {
+    const profileBgImg = document.querySelector('#profile-bg img');
+    if (profileBgImg) {
+        // 切换到下一张背景图
+        currentBgIndex = currentBgIndex >= totalBgImages ? 1 : currentBgIndex + 1;
+        
+        // 更新图片源
+        profileBgImg.src = `assets/bg${currentBgIndex}.jpg`;
+        
+        // 添加切换动画效果
+        profileBgImg.style.opacity = '0.7';
+        setTimeout(() => {
+            profileBgImg.style.opacity = '1';
+        }, 150);
+    }
+}

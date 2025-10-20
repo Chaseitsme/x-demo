@@ -1,8 +1,8 @@
 // 推文数据存储
 let tweetsData = [
     {
-        "id": 1760716471123,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1760436203267,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "video",
@@ -11,14 +11,14 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 0,
-            "retweets": 19,
-            "likes": 51,
-            "views": 1023
+            "comments": 8,
+            "retweets": 17,
+            "likes": 43,
+            "views": 2052
         }
     },
     {
-        "id": 1760716471576,
+        "id": 1760436203163,
         "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
@@ -28,15 +28,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 17,
-            "likes": 107,
-            "views": 1657
+            "comments": 14,
+            "retweets": 12,
+            "likes": 18,
+            "views": 1778
         }
     },
     {
-        "id": 1760716471016,
-        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
+        "id": 1760436203054,
+        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
                 "type": "video",
@@ -45,15 +45,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 7,
-            "retweets": 17,
-            "likes": 89,
-            "views": 2485
+            "comments": 9,
+            "retweets": 15,
+            "likes": 75,
+            "views": 654
         }
     },
     {
-        "id": 1760716471360,
-        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
+        "id": 1760436202948,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "video",
@@ -62,15 +62,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 16,
-            "likes": 33,
-            "views": 562
+            "comments": 10,
+            "retweets": 3,
+            "likes": 63,
+            "views": 2003
         }
     },
     {
-        "id": 1760716471232,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1760436202729,
+        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
         "media": [
             {
                 "type": "video",
@@ -79,15 +79,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 11,
+            "comments": 1,
             "retweets": 1,
-            "likes": 47,
-            "views": 1084
+            "likes": 62,
+            "views": 2054
         }
     },
     {
-        "id": 1760716470909,
-        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
+        "id": 1760436202624,
+        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
         "media": [
             {
                 "type": "video",
@@ -96,14 +96,14 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 16,
-            "likes": 10,
-            "views": 1033
+            "comments": 1,
+            "retweets": 15,
+            "likes": 90,
+            "views": 2397
         }
     },
     {
-        "id": 1760718063773,
+        "id": 1760436202516,
         "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
@@ -114,14 +114,14 @@ let tweetsData = [
         "time": "刚刚",
         "stats": {
             "comments": 2,
-            "retweets": 21,
-            "likes": 104,
-            "views": 2071
+            "retweets": 10,
+            "likes": 51,
+            "views": 2122
         }
     },
     {
-        "id": 1760716471466,
-        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
+        "id": 1760436202407,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "video",
@@ -131,9 +131,26 @@ let tweetsData = [
         "time": "刚刚",
         "stats": {
             "comments": 14,
-            "retweets": 24,
-            "likes": 47,
-            "views": 1598
+            "retweets": 11,
+            "likes": 48,
+            "views": 814
+        }
+    },
+    {
+        "id": 1760436202844,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
+        "media": [
+            {
+                "type": "video",
+                "url": "assets/media-9.mp4"
+            }
+        ],
+        "time": "刚刚",
+        "stats": {
+            "comments": 14,
+            "retweets": 9,
+            "likes": 45,
+            "views": 558
         }
     }
 ];
