@@ -135,23 +135,6 @@ let tweetsData = [
             "likes": 48,
             "views": 814
         }
-    },
-    {
-        "id": 1760436202844,
-        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
-        "media": [
-            {
-                "type": "video",
-                "url": "assets/media-9.mp4"
-            }
-        ],
-        "time": "刚刚",
-        "stats": {
-            "comments": 14,
-            "retweets": 9,
-            "likes": 45,
-            "views": 558
-        }
     }
 ];
 

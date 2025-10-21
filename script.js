@@ -853,6 +853,7 @@ function loadProfileHeader() {
     const profileAvatar = document.getElementById('profile-avatar');
     const profileName = document.getElementById('profile-name');
     const profileHandle = document.getElementById('profile-handle');
+    const topbarName = document.getElementById('topbar-name');
     
     if (profileAvatar) {
         if (settings.avatar) {
@@ -869,6 +870,10 @@ function loadProfileHeader() {
     
     if (profileHandle) {
         profileHandle.textContent = settings.handle;
+    }
+
+    if (topbarName) {
+        topbarName.textContent = settings.author;
     }
 }
 

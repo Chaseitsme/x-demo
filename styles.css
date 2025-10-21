@@ -21,6 +21,7 @@ body {
     --border-color: #eff3f4;
     --accent-color: #1d9bf0;
     --accent-hover: #1a8cd8;
+    --icon-filter: brightness(0) saturate(100%);
 }
 
 .dark-theme {
@@ -32,6 +33,7 @@ body {
     --border-color: #2f3336;
     --accent-color: #1d9bf0;
     --accent-hover: #1a8cd8;
+    --icon-filter: brightness(0) invert(1);
 }
 
 body {
@@ -1251,6 +1253,75 @@ body {
     overflow: hidden;
 }
 
+/* 顶部横栏 */
+.profile-topbar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.topbar-left { /* 让标题紧挨箭头 */
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topbar-left .back-arrow {
+    font-size: 22px;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.topbar-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.1;
+    gap: 2px; /* 避免两行重叠 */
+}
+
+.topbar-name-line {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* 更紧凑靠左 */
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.topbar-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right .topbar-icon {
+    width: 22px;
+    height: 22px;
+    filter: var(--icon-filter);
+    cursor: pointer;
+}
+
+.topbar-verified {
+    width: 18px;
+    height: 18px;
+    /* 金色效果 */
+    filter: sepia(1) saturate(6) hue-rotate(330deg) brightness(0.9);
+}
+
 .profile-bg img {
     width: 100%;
     height: 100%;
@@ -1369,6 +1440,7 @@ body {
 .profile-description {
     margin-bottom: 12px;
     line-height: 1.4;
+    font-size: 15px;
 }
 
 .profile-description a {
