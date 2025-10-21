@@ -814,17 +814,22 @@ body {
 }
 
 .sortable-tweets {
-    max-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
 }
 
 .sortable-tweet {
     background-color: var(--bg-secondary);
     border-radius: 8px;
-    padding: 16px;
+    padding: 12px;
     margin-bottom: 12px;
     cursor: move;
     position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow: hidden;
 }
 
 .sortable-tweet:hover {
@@ -832,41 +837,44 @@ body {
 }
 
 .sortable-tweet-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+    display: none;
 }
 
 .sortable-tweet-author {
-    font-weight: 700;
+    display: none;
 }
 
 .delete-tweet {
     background-color: #f4212e;
     color: white;
     border: none;
-    padding: 4px 8px;
+    padding: 6px 12px;
     border-radius: 4px;
     font-size: 12px;
     cursor: pointer;
+    flex-shrink: 0;
+    height: fit-content;
 }
 
 .sortable-tweet-content {
     font-size: 14px;
-    margin-bottom: 8px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4;
 }
 
 .sortable-tweet-media {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .sortable-tweet-media img,
 .sortable-tweet-media video {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     border-radius: 4px;
 }

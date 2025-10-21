@@ -498,19 +498,16 @@ function createSortableTweetElement(tweet) {
             if (media.type === 'image') {
                 mediaHtml += `<img src="${media.url}" alt="媒体">`;
             } else {
-                mediaHtml += `<video src="${media.url}"></video>`;
+                mediaHtml += `<video src="${media.url}" autoplay muted loop></video>`;
             }
         });
         mediaHtml += '</div>';
     }
     
     tweetDiv.innerHTML = `
-        <div class="sortable-tweet-header">
-            <div class="sortable-tweet-author">${settings.author} ${settings.handle}</div>
-            <button class="delete-tweet" onclick="handleDeleteTweet(${tweet.id})">删除</button>
-        </div>
-        <div class="sortable-tweet-content">${tweet.content}</div>
         ${mediaHtml}
+        <div class="sortable-tweet-content">${tweet.content}</div>
+        <button class="delete-tweet" onclick="handleDeleteTweet(${tweet.id})">删除</button>
     `;
     
     return tweetDiv;
