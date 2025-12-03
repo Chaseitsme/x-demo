@@ -381,8 +381,26 @@
 
       toggleButton.addEventListener('click', function(e) {
         e.preventDefault();
+        window.toggleAppTheme();
+      });
+
+      window.toggleAppTheme = function() {
         theme = theme === 'light' ? 'dark' : 'light';
         applyTheme();
+      };
+
+      window.addEventListener('message', function(event) {
+        const data = event.data;
+        const type = (typeof data === 'string') ? data : (data && data.type);
+        if (type === 'toggleTheme') {
+          window.toggleAppTheme();
+        } else if (type === 'setTheme:dark') {
+          theme = 'dark';
+          applyTheme();
+        } else if (type === 'setTheme:light') {
+          theme = 'light';
+          applyTheme();
+        }
       });
 
       // 默认初始化为 light，不再跟随系统偏好
