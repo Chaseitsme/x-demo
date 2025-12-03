@@ -191,16 +191,15 @@
         applyTheme();
       };
 
-      // 监听来自父页面（iframe 外部）的消息控制
       window.addEventListener('message', function(event) {
-        // 接收字符串命令
         const data = event.data;
-        if (data === 'toggleTheme') {
+        const type = (typeof data === 'string') ? data : (data && data.type);
+        if (type === 'toggleTheme') {
           window.toggleTheme();
-        } else if (data === 'setTheme:dark') {
+        } else if (type === 'setTheme:dark') {
           theme = 'dark';
           applyTheme();
-        } else if (data === 'setTheme:light') {
+        } else if (type === 'setTheme:light') {
           theme = 'light';
           applyTheme();
         }
@@ -209,6 +208,7 @@
       // 初始应用
       applyTheme();
       applyNoDragAllImages();
+      try { window.parent && window.parent.postMessage({ type: 'GateThemeReady', theme }, '*'); } catch(_) {}
 
       // 页面加载完成后执行
       window.addEventListener('load', function() {
