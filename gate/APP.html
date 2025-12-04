@@ -13,33 +13,39 @@
       padding: 0;
       height: 100%;
       background: #000; /* 可选：便于在更宽屏幕上观察页面边界 */
-      overscroll-behavior: none; /* 防止到达边界后继续滑动的惯性效果 */
-      overflow-x: hidden; /* 防止100vw在部分浏览器出现横向滚动 */
+      overflow: hidden; /* 彻底禁用 body 滚动，由 .page 接管 */
     }
     
-    /* 隐藏滚动条但保持滚动功能 */
-    html {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
-    }
-    html::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
+    /* 隐藏 .page 的滚动条但保持滚动功能 */
     .page {
       /* 当视口宽高比超过 2:3 时，限制内容宽度为 2/3 * 视口高度，同时不超过 750px */
       width: min(100vw, 750px, calc(100vh * 2 / 3));
-      height: 100vh; /* 页面高度与视口一致，滚动到主图底部即停止 */
+      height: 100%; /* 占满视口高度 */
       margin: 0 auto; /* 大宽度下居中显示 */
       position: relative;
+      overflow-y: auto; /* 开启内部滚动 */
       overflow-x: hidden;
+      overscroll-behavior: none;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      cursor: grab;
     }
+    .page::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+      width: 0;
+      height: 0;
+    }
+    .page.dragging { cursor: grabbing; }
     .main-image {
       width: 100%;
-      height: calc(100vh + var(--footer-h, 0px)); /* 主图延伸到吸底图下方，避免底部黑区 */
+      height: calc(100vh + var(--footer-h, 0px));
       object-fit: cover;
-      object-position: top center; /* 顶部对齐，保证顶部完整显示 */
+      object-position: top center;
       display: block;
+      cursor: grab;
+      touch-action: none;
     }
+    .main-image.dragging { cursor: grabbing; }
 
     /* Banner 容器：绝对定位，随页面滚动并保持与 PNG 相对位置一致 */
     .banner {
@@ -307,7 +313,47 @@
         // 彻底阻止元素上的默认拖拽
         banner.addEventListener('dragstart', (e) => e.preventDefault());
       })();
+      
+      (function setupPageDragScroll(){
+        let dragging = false;
+        let prevY = 0;
+        
+        // 确保获取到滚动容器
+        const scrollContainer = document.querySelector('.page');
 
+        mainImage.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          // 不阻止默认行为，否则可能影响部分浏览器的滚动优化？
+          // 但为了自定义拖拽，通常需要 preventDefault 以防选中图片
+          e.preventDefault();
+          dragging = true;
+          prevY = e.clientY;
+          mainImage.classList.add('dragging');
+          document.body.style.userSelect = 'none';
+          try { mainImage.setPointerCapture(e.pointerId); } catch(_) {}
+        });
+        mainImage.addEventListener('pointermove', (e) => {
+          if (!dragging) return;
+          const dy = e.clientY - prevY;
+          prevY = e.clientY;
+          if (dy) {
+            // 直接修改容器的 scrollTop
+            scrollContainer.scrollTop -= dy;
+          }
+        });
+        function endDrag(e){
+          if (!dragging) return;
+          dragging = false;
+          mainImage.classList.remove('dragging');
+          document.body.style.userSelect = '';
+          try { mainImage.releasePointerCapture(e.pointerId); } catch(_) {}
+        }
+        mainImage.addEventListener('pointerup', endDrag);
+        mainImage.addEventListener('pointercancel', endDrag);
+        mainImage.addEventListener('pointerleave', endDrag);
+        mainImage.addEventListener('dragstart', (e) => e.preventDefault());
+      })();
+      
       function applyTheme() {
         mainImage.src = images[theme].main;
         footerImage.src = images[theme].footer;
@@ -335,22 +381,29 @@
 
       toggleButton.addEventListener('click', function(e) {
         e.preventDefault();
-        theme = theme === 'light' ? 'dark' : 'light';
-        applyTheme();
+        window.toggleAppTheme();
       });
 
-      // 初始化主题：跟随系统偏好
-      try {
-        const mql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-        theme = mql && mql.matches ? 'dark' : 'light';
-        if (mql && mql.addEventListener) {
-          mql.addEventListener('change', (e) => {
-            theme = e.matches ? 'dark' : 'light';
-            applyTheme();
-          });
-        }
-      } catch (_) {}
+      window.toggleAppTheme = function() {
+        theme = theme === 'light' ? 'dark' : 'light';
+        applyTheme();
+      };
 
+      window.addEventListener('message', function(event) {
+        const data = event.data;
+        const type = (typeof data === 'string') ? data : (data && data.type);
+        if (type === 'toggleTheme') {
+          window.toggleAppTheme();
+        } else if (type === 'setTheme:dark') {
+          theme = 'dark';
+          applyTheme();
+        } else if (type === 'setTheme:light') {
+          theme = 'light';
+          applyTheme();
+        }
+      });
+
+      // 默认初始化为 light，不再跟随系统偏好
       applyTheme();
 
       // 在窗口尺寸变化时同步更新（横竖屏切换或地址栏变化）

@@ -191,9 +191,24 @@
         applyTheme();
       };
 
+      window.addEventListener('message', function(event) {
+        const data = event.data;
+        const type = (typeof data === 'string') ? data : (data && data.type);
+        if (type === 'toggleTheme') {
+          window.toggleTheme();
+        } else if (type === 'setTheme:dark') {
+          theme = 'dark';
+          applyTheme();
+        } else if (type === 'setTheme:light') {
+          theme = 'light';
+          applyTheme();
+        }
+      });
+
       // 初始应用
       applyTheme();
       applyNoDragAllImages();
+      try { window.parent && window.parent.postMessage({ type: 'GateThemeReady', theme }, '*'); } catch(_) {}
 
       // 页面加载完成后执行
       window.addEventListener('load', function() {
