@@ -52,8 +52,6 @@
       position: absolute; /* 相对于 .page 定位 */
       left: 0; top: 0;
       width: 0; height: 0; /* 由 JS 动态赋值 */
-      border: 3px solid #F2F3F4; /* 具体宽度与圆角由 JS 按比例更新 */
-      border-radius: 24px;
       overflow: hidden;
       z-index: 500; /* 在主图之上、吸底图之下 */
       -webkit-user-select: none; user-select: none;
@@ -99,11 +97,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* 主题下的Banner描边颜色 */
-    body[data-theme='light'] .banner { border-color: #F2F3F4; }
-    body[data-theme='dark'] .banner { border-color: #1F2023; }
-
-    /* 全站图片不可拖拽，统一与横幅一致的限制 */
+    /* 底部固定的吸底图片，始终固定在视口底部 */
     img {
       -webkit-user-drag: none;
       user-select: none;
@@ -169,21 +163,17 @@
       // 按主图像素坐标更新 Banner 的位置与尺寸
       function updateBannerLayout() {
         if (!banner) return;
-        const { s, offsetLeft } = computeImageMapping();
-        // 需求坐标（相对于原始 PNG 像素）：left=48, top=813, size=498x741
-        const leftPx = offsetLeft + 48 * s;
-        const topPx  = 813 * s;
-        const bw     = 498 * s;
-        const bh     = 741 * s;
-        const br     = 24 * s;  // 圆角按比例缩放
-        const bwBorder = 3 * s; // 描边按比例缩放
+        const { s, cw } = computeImageMapping();
+        // 需求坐标（相对于原始 PNG 像素）：top=1095, 居中对齐, size=981x312
+        const bw     = 981 * s;
+        const bh     = 312 * s;
+        const leftPx = (cw - bw) / 2;
+        const topPx  = 1095 * s;
 
         banner.style.left = leftPx + 'px';
         banner.style.top = topPx + 'px';
         banner.style.width = bw + 'px';
         banner.style.height = bh + 'px';
-        banner.style.borderRadius = br + 'px';
-        banner.style.borderWidth = bwBorder + 'px';
       }
 
       // 全站图片统一不可拖拽（与横幅行为一致）
