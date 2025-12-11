@@ -8,10 +8,28 @@
     :root { --header-h: 0px; }
     html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
+    /* Mac 顶部栏 */
+    .mac-top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 39px;
+      z-index: 1002; /* 确保在最上层 */
+      background-color: #000;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .mac-top-bar img {
+      height: 39px;
+      width: auto;
+      display: block;
+    }
+
     /* 顶部吸顶：左右两张图片 */
     .gate-header {
       position: fixed;
-      top: 0;
+      top: 39px; /* 位于 Mac 栏下方 */
       left: 0;
       right: 0;
       width: 100vw;
@@ -86,6 +104,11 @@
   </style>
 </head>
 <body data-theme="light">
+  <!-- Mac 顶部栏 -->
+  <div class="mac-top-bar">
+    <img src="mac.jpg" alt="Mac Top Bar">
+  </div>
+
   <!-- 顶部吸顶：左右两张图片 -->
   <div class="gate-header">
     <div class="gate-header-left">
@@ -158,10 +181,13 @@
       // 动态调整页面顶部间距
       function adjustPagePadding() {
         const header = document.querySelector('.gate-header');
+        const macBar = document.querySelector('.mac-top-bar');
         const page = document.querySelector('.gate-page');
-        if (header && page) {
-          const headerHeight = header.offsetHeight;
-          page.style.paddingTop = headerHeight + 'px';
+        if (page) {
+          let totalTop = 0;
+          if (macBar) totalTop += macBar.offsetHeight;
+          if (header) totalTop += header.offsetHeight;
+          page.style.paddingTop = totalTop + 'px';
         }
       }
 
