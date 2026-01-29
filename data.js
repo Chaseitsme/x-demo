@@ -1,8 +1,8 @@
 // 推文数据存储
 let tweetsData = [
     {
-        "id": 1769664909198,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673719587,
+        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
         "media": [
             {
                 "type": "image",
@@ -11,15 +11,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 2,
-            "retweets": 20,
-            "likes": 23,
-            "views": 2178
+            "comments": 1,
+            "retweets": 22,
+            "likes": 18,
+            "views": 1966
         }
     },
     {
-        "id": 1769664906335,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1769673705343,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -28,15 +28,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 0,
-            "retweets": 15,
-            "likes": 87,
-            "views": 2463
+            "comments": 9,
+            "retweets": 23,
+            "likes": 102,
+            "views": 1661
         }
     },
     {
-        "id": 1769664908483,
-        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
+        "id": 1769673703477,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "image",
@@ -45,15 +45,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 14,
-            "retweets": 24,
-            "likes": 82,
-            "views": 1512
+            "comments": 1,
+            "retweets": 20,
+            "likes": 99,
+            "views": 2336
         }
     },
     {
-        "id": 1769664908074,
-        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
+        "id": 1769673719691,
+        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
                 "type": "image",
@@ -62,15 +62,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 11,
-            "retweets": 12,
-            "likes": 48,
-            "views": 1023
+            "comments": 0,
+            "retweets": 13,
+            "likes": 60,
+            "views": 1324
         }
     },
     {
-        "id": 1769664906131,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673702753,
+        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
                 "type": "image",
@@ -79,15 +79,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 11,
-            "retweets": 6,
-            "likes": 90,
-            "views": 1577
+            "comments": 12,
+            "retweets": 24,
+            "likes": 12,
+            "views": 629
         }
     },
     {
-        "id": 1769664909096,
-        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
+        "id": 1769673702651,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "image",
@@ -96,15 +96,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 12,
-            "likes": 37,
-            "views": 1013
+            "comments": 6,
+            "retweets": 20,
+            "likes": 76,
+            "views": 736
         }
     },
     {
-        "id": 1769664908381,
-        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
+        "id": 1769673705445,
+        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
         "media": [
             {
                 "type": "image",
@@ -113,15 +113,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 9,
-            "retweets": 3,
-            "likes": 98,
-            "views": 2350
+            "comments": 11,
+            "retweets": 6,
+            "likes": 31,
+            "views": 1335
         }
     },
     {
-        "id": 1769664908994,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1769673703066,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -130,15 +130,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
-            "retweets": 6,
-            "likes": 21,
-            "views": 1173
+            "comments": 7,
+            "retweets": 16,
+            "likes": 59,
+            "views": 1572
         }
     },
     {
-        "id": 1769664908891,
-        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
+        "id": 1769673705238,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "image",
@@ -147,15 +147,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
+            "comments": 2,
             "retweets": 24,
-            "likes": 67,
-            "views": 1802
+            "likes": 64,
+            "views": 961
         }
     },
     {
-        "id": 1769664908788,
-        "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
+        "id": 1769673705135,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "image",
@@ -164,15 +164,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
-            "retweets": 17,
-            "likes": 82,
-            "views": 1746
+            "comments": 8,
+            "retweets": 16,
+            "likes": 61,
+            "views": 1885
         }
     },
     {
-        "id": 1769664908686,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673702346,
+        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
                 "type": "image",
@@ -181,15 +181,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 9,
-            "retweets": 11,
-            "likes": 13,
-            "views": 1134
+            "comments": 6,
+            "retweets": 20,
+            "likes": 64,
+            "views": 865
         }
     },
     {
-        "id": 1769664909402,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673705033,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "image",
@@ -198,15 +198,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 3,
-            "retweets": 7,
-            "likes": 65,
-            "views": 1607
+            "comments": 12,
+            "retweets": 13,
+            "likes": 97,
+            "views": 2125
         }
     },
     {
-        "id": 1769664908279,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673704932,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "image",
@@ -216,13 +216,13 @@ let tweetsData = [
         "time": "刚刚",
         "stats": {
             "comments": 2,
-            "retweets": 16,
-            "likes": 51,
-            "views": 773
+            "retweets": 3,
+            "likes": 59,
+            "views": 2055
         }
     },
     {
-        "id": 1769664909300,
+        "id": 1769673704827,
         "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
@@ -232,15 +232,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 11,
-            "retweets": 21,
-            "likes": 98,
-            "views": 1991
+            "comments": 8,
+            "retweets": 1,
+            "likes": 23,
+            "views": 2137
         }
     },
     {
-        "id": 1769664907972,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673704724,
+        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
         "media": [
             {
                 "type": "image",
@@ -249,15 +249,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 7,
-            "retweets": 17,
-            "likes": 103,
-            "views": 2031
+            "comments": 4,
+            "retweets": 20,
+            "likes": 64,
+            "views": 969
         }
     },
     {
-        "id": 1769664907870,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1769673704620,
+        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
                 "type": "image",
@@ -266,15 +266,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 10,
-            "retweets": 18,
-            "likes": 50,
-            "views": 1812
+            "comments": 3,
+            "retweets": 13,
+            "likes": 21,
+            "views": 1133
         }
     },
     {
-        "id": 1769664907768,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673704516,
+        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
                 "type": "image",
@@ -283,15 +283,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
-            "retweets": 8,
-            "likes": 82,
-            "views": 2227
+            "comments": 10,
+            "retweets": 2,
+            "likes": 97,
+            "views": 1246
         }
     },
     {
-        "id": 1769664908585,
-        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
+        "id": 1769673704414,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "image",
@@ -301,14 +301,14 @@ let tweetsData = [
         "time": "刚刚",
         "stats": {
             "comments": 12,
-            "retweets": 14,
-            "likes": 39,
-            "views": 945
+            "retweets": 7,
+            "likes": 91,
+            "views": 527
         }
     },
     {
-        "id": 1769664907667,
-        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
+        "id": 1769673704308,
+        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
                 "type": "image",
@@ -317,14 +317,14 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 7,
-            "retweets": 14,
-            "likes": 82,
-            "views": 580
+            "comments": 3,
+            "retweets": 20,
+            "likes": 69,
+            "views": 1099
         }
     },
     {
-        "id": 1769664908176,
+        "id": 1769673705651,
         "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
@@ -334,15 +334,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 12,
-            "retweets": 12,
-            "likes": 68,
-            "views": 1039
+            "comments": 2,
+            "retweets": 3,
+            "likes": 17,
+            "views": 2445
         }
     },
     {
-        "id": 1769664907565,
-        "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
+        "id": 1769673704206,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "image",
@@ -351,14 +351,14 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 0,
-            "retweets": 12,
-            "likes": 26,
-            "views": 1374
+            "comments": 2,
+            "retweets": 3,
+            "likes": 23,
+            "views": 1591
         }
     },
     {
-        "id": 1769664907463,
+        "id": 1769673704101,
         "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
         "media": [
             {
@@ -368,15 +368,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 3,
-            "retweets": 10,
-            "likes": 58,
-            "views": 1425
+            "comments": 4,
+            "retweets": 6,
+            "likes": 16,
+            "views": 1364
         }
     },
     {
-        "id": 1769664907359,
-        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
+        "id": 1769673703993,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -385,15 +385,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 1,
-            "retweets": 20,
-            "likes": 102,
-            "views": 1376
+            "comments": 10,
+            "retweets": 18,
+            "likes": 104,
+            "views": 773
         }
     },
     {
-        "id": 1769664907257,
-        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
+        "id": 1769673703891,
+        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
         "media": [
             {
                 "type": "image",
@@ -402,15 +402,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 0,
-            "retweets": 3,
-            "likes": 60,
-            "views": 2108
+            "comments": 7,
+            "retweets": 17,
+            "likes": 61,
+            "views": 2136
         }
     },
     {
-        "id": 1769664907156,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673703790,
+        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
         "media": [
             {
                 "type": "image",
@@ -419,15 +419,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
-            "retweets": 19,
-            "likes": 31,
-            "views": 880
+            "comments": 7,
+            "retweets": 3,
+            "likes": 83,
+            "views": 953
         }
     },
     {
-        "id": 1769664907055,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673703686,
+        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
         "media": [
             {
                 "type": "image",
@@ -436,15 +436,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 18,
-            "likes": 70,
-            "views": 2493
+            "comments": 10,
+            "retweets": 11,
+            "likes": 15,
+            "views": 2433
         }
     },
     {
-        "id": 1769664909504,
-        "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
+        "id": 1769673703583,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -453,15 +453,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 13,
-            "retweets": 0,
-            "likes": 69,
-            "views": 2249
+            "comments": 1,
+            "retweets": 10,
+            "likes": 41,
+            "views": 2183
         }
     },
     {
-        "id": 1769664906952,
-        "content": "Rate cut expectations are heating up — Gate launches $BTC Bull vs Bear Prediction!\n\n$100,000 prize pool up for grabs, with up to $8,000 per winner.\n\nWhether you're new or pro, there's a prize for you:\n✅ 10 $USDT for your first correct prediction\n✅ $70,000 for top-ranked players",
+        "id": 1769673705549,
+        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
         "media": [
             {
                 "type": "image",
@@ -470,15 +470,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 6,
-            "retweets": 11,
-            "likes": 103,
-            "views": 796
+            "comments": 13,
+            "retweets": 24,
+            "likes": 68,
+            "views": 1679
         }
     },
     {
-        "id": 1769664906848,
-        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "id": 1769673703374,
+        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
         "media": [
             {
                 "type": "image",
@@ -487,15 +487,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 7,
-            "retweets": 1,
-            "likes": 41,
-            "views": 683
+            "comments": 6,
+            "retweets": 8,
+            "likes": 91,
+            "views": 1391
         }
     },
     {
-        "id": 1769664906744,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1769673703271,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -504,15 +504,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 4,
-            "retweets": 17,
-            "likes": 108,
-            "views": 1036
+            "comments": 13,
+            "retweets": 8,
+            "likes": 59,
+            "views": 636
         }
     },
     {
-        "id": 1769664906641,
-        "content": "$GUSD dual earnings, with APR up to 19.05%\n\n1️⃣Mint $GUSD and earn 4.4% APR\n2️⃣Stake in #Launchpool for up to 14.65% APR, claim $BOT $AVNT $PORTALS free airdrops every hour",
+        "id": 1769673703168,
+        "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
         "media": [
             {
                 "type": "image",
@@ -521,15 +521,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 2,
-            "retweets": 17,
-            "likes": 32,
-            "views": 1323
+            "comments": 9,
+            "retweets": 23,
+            "likes": 108,
+            "views": 766
         }
     },
     {
-        "id": 1769664906538,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673702964,
+        "content": "🏎️ VIP F1 Experience\n\nFeel the adrenaline — Gate VIPs hit the trackside for the ultimate Singapore Grand Prix experience!\n\n📈 Sometimes the charts aren't testing your skills… they're testing your patience.",
         "media": [
             {
                 "type": "image",
@@ -538,14 +538,14 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 12,
-            "retweets": 1,
-            "likes": 88,
-            "views": 2100
+            "comments": 14,
+            "retweets": 12,
+            "likes": 97,
+            "views": 2385
         }
     },
     {
-        "id": 1769664906437,
+        "id": 1769673702859,
         "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
         "media": [
             {
@@ -555,15 +555,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 3,
-            "retweets": 20,
-            "likes": 26,
-            "views": 1545
+            "comments": 7,
+            "retweets": 18,
+            "likes": 19,
+            "views": 683
         }
     },
     {
-        "id": 1769664906233,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673702549,
+        "content": "Gate Initial Listing: $DL \n\n🔹 Trading Pair: $DL / $USDT\n🔹 Trading Starts: 12:00 PM, September 19th (UTC)",
         "media": [
             {
                 "type": "image",
@@ -572,15 +572,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 8,
-            "retweets": 11,
-            "likes": 73,
-            "views": 1525
+            "comments": 14,
+            "retweets": 10,
+            "likes": 71,
+            "views": 1370
         }
     },
     {
-        "id": 1769664906029,
-        "content": "Gate is taking over @Token2049 week — back-to-back, non-stop vibes!\n\n🎶 Token of Love Music Festival (Oct 1)  \n🏁 Gate Singapore Grand Prix Reception (Oct 2)  \n🥂 Gate VIP Dinner (Oct 2)  \n🏎️ VIP F1 Experience (Oct 3–5)",
+        "id": 1769673702448,
+        "content": "💥Gate \"Cash-In Wednesday\" is here\nWednesday Exclusive · For Newcomers\nInvite 1 friend to sign up = Get $5 cash instantly!",
         "media": [
             {
                 "type": "image",
@@ -589,15 +589,15 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
-            "comments": 11,
-            "retweets": 24,
-            "likes": 84,
-            "views": 1266
+            "comments": 0,
+            "retweets": 6,
+            "likes": 83,
+            "views": 651
         }
     },
     {
-        "id": 1769664905926,
-        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "id": 1769673702243,
+        "content": "\"The Power of Now\" wrapped in Dubai 🌟\n\nCrypto, AI, art & Web3 all in one room — sparks were flying!\n\nNot just an event, it's a community moment!\n\nGate Group is where culture meets innovation.",
         "media": [
             {
                 "type": "image",
@@ -606,10 +606,44 @@ let tweetsData = [
         ],
         "time": "刚刚",
         "stats": {
+            "comments": 3,
+            "retweets": 21,
+            "likes": 51,
+            "views": 1398
+        }
+    },
+    {
+        "id": 1769673705753,
+        "content": "Simple Earn Crazy Wednesday #6 is Live! \n\n$USDT 3-Day Fixed Term with 16% APR + dual rewards in $USDT & $AVNT\n\nExtra 10% $USDT Rate-Up Voucher for participants",
+        "media": [
+            {
+                "type": "image",
+                "url": "assets/media-37.png"
+            }
+        ],
+        "time": "刚刚",
+        "stats": {
+            "comments": 2,
+            "retweets": 8,
+            "likes": 43,
+            "views": 1395
+        }
+    },
+    {
+        "id": 1769673702141,
+        "content": "🥂 Gate Exclusive VIP Dinner\n\nAn intimate dining experience with Gate's partners, friends, and VIPs — an evening to remember.",
+        "media": [
+            {
+                "type": "image",
+                "url": "assets/media-38.png"
+            }
+        ],
+        "time": "刚刚",
+        "stats": {
             "comments": 6,
-            "retweets": 5,
-            "likes": 49,
-            "views": 1327
+            "retweets": 7,
+            "likes": 68,
+            "views": 1986
         }
     }
 ];
